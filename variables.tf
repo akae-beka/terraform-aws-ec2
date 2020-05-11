@@ -17,7 +17,7 @@ variable "create" {
   type        = bool
 }
 
-variable "count" {
+variable "instances" {
   description = "Number of EC2 Instances."
   type        = number
 }

@@ -16,7 +16,7 @@ module "aws_ec2" {
   source = "git::github.com/akae-beka/terraform-aws-ec2"
 
   create        = true
-  count         = 1
+  instances     = 1
   instance_type = "t2.micro"
   key_name      = "yourkeypair"
   subnet_id     = "subnet-07c93198280415dc0" 

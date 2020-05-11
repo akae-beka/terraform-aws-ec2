@@ -15,7 +15,7 @@ module "aws_ec2" {
   source = "./modules/ec2"
 
   create_ec2    = var.create
-  instances     = var.count
+  instances     = var.instances
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = var.subnet_id
