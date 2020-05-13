@@ -73,17 +73,3 @@ resource "aws_instance" "main" {
     }
   )
 }
-
-resource "aws_eip" "main" {
-  count = var.create_ec2 ? var.instances : 0
-
-  /*vpc      = true*/
-  instance = aws_instance.main[count.index].id
-
-  tags = merge(
-    local.tags,
-    {
-      Name = "eip-ec2-${terraform.workspace}"
-    }
-  )
-}
