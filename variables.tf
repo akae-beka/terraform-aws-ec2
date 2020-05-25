@@ -17,6 +17,16 @@ variable "create" {
   type        = bool
 }
 
+variable "key_name" {
+  description = "The key name of the Key Pair."
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "The VPC Subnet ID."
+  type        = string
+}
+
 variable "instances" {
   description = "Number of EC2 Instances."
   type        = number
@@ -27,12 +37,7 @@ variable "instance_type" {
   type        = string
 }
 
-variable "key_name" {
-  description = "The key name of the Key Pair."
-  type        = string
-}
-
-variable "subnet_id" {
-  description = "The VPC Subnet ID."
-  type        = string
+variable "security_group_ids" {
+  description = "A list of security group IDs to associate with."
+  type        = list(string)
 }
