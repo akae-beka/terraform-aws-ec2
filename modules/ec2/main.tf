@@ -41,10 +41,11 @@ resource "random_id" "main" {
 resource "aws_instance" "main" {
   count = var.create_ec2 ? var.instances : 0
 
-  ami           = data.aws_ami.ubuntu.id
-  key_name      = var.key_name
-  subnet_id     = var.subnet_id
-  instance_type = var.instance_type
+  ami                    = data.aws_ami.ubuntu.id
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
+  instance_type          = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   dynamic "root_block_device" {
     iterator = root_block
