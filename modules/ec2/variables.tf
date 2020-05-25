@@ -13,6 +13,11 @@ variable "instances" {
   type        = number
 }
 
+variable "key_name" {
+  description = "The key name of the Key Pair to use for the instance."
+  type        = string
+}
+
 variable "subnet_id" {
   description = "The VPC Subnet ID to launch in."
   type        = string
@@ -23,9 +28,9 @@ variable "instance_type" {
   type        = string
 }
 
-variable "key_name" {
-  description = "The key name of the Key Pair to use for the instance."
-  type        = string
+variable "vpc_security_group_ids" {
+  description = "A list of security group IDs to associate with."
+  type        = list(string)
 }
 
 variable "root_block_device" {
