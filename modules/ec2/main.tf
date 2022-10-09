@@ -1,12 +1,3 @@
-# ----------------------------------------------------------------------------------------------------------------------
-# REQUIRE A SPECIFIC TERRAFORM VERSION OR HIGHER
-# This module has been updated with 0.12 syntax, which means it is no longer compatible with any versions below 0.12.
-# ----------------------------------------------------------------------------------------------------------------------
-
-terraform {
-  required_version = ">= 0.12"
-}
-
 # ---------------------------------------------------------------------------------------------------------------------
 # CREATE AWS EC2
 # ---------------------------------------------------------------------------------------------------------------------
@@ -16,22 +7,6 @@ locals {
     Description = "Managed by Terraform"
     Environment = terraform.workspace
   }
-}
-
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"]
 }
 
 resource "random_id" "main" {
