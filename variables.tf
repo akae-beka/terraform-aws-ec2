@@ -12,32 +12,32 @@
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
 
-variable "create" {
+variable "ec2_create" {
   description = "Controls if the EC2 resources should be created."
   type        = bool
 }
 
-variable "key_name" {
+variable "ec2_key_name" {
   description = "The key name of the Key Pair."
   type        = string
 }
 
-variable "subnet_id" {
+variable "ec2_subnet_id" {
   description = "The VPC Subnet ID."
   type        = string
 }
 
-variable "instances" {
+variable "ec2_count" {
   description = "Number of EC2 Instances."
   type        = number
 }
 
-variable "instance_type" {
+variable "ec2_instance_type" {
   description = "The type of instance to start."
   type        = string
 }
 
-variable "security_group_ids" {
+variable "ec2_security_group_ids" {
   description = "A list of security group IDs to associate with."
   type        = list(string)
 }
